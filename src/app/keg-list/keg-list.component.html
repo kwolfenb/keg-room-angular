@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Brewery</th>
+    <th>Price</th>
+    <th>ABV %</th>
+    <th>Edit</th>
+  </tr>
+  <tr [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList">
+    <td>{{currentKeg.name}}</td>
+    <td>{{currentKeg.brand}}</td>
+    <td>{{currentKeg.price}}</td>
+    <td>{{currentKeg.alcoholContent}}</td>
+    <td><button class="btn-btn success" (click)="editKeg(currentKeg)">Edit</button></td>
+  </tr>
+</table>
