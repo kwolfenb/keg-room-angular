@@ -1,6 +1,6 @@
 <div class="container">
     <app-keg-list [childKegList]="kegList" (clickSender)="editKeg($event)"></app-keg-list>
     <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
-    <app-new-keg (sendNewKeg)="addKeg($event)"></app-new-keg>
+    <app-new-keg (sendNewKeg)="addKeg($event)"(showKeg)="showNew()" [showNewKeg]="showNewKeg"></app-new-keg>
 </div>
 

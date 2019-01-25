@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'app';
 
   selectedKeg = null;
+  showNewKeg = false;
 
   kegList: Keg[] = [
     new Keg('Mannys', 'Georgetown Brewing', 6, 4.5),
@@ -20,6 +21,10 @@ export class AppComponent {
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
     console.log(clickedKeg);
+  }
+
+  showNew() {
+    this.showNewKeg=!this.showNewKeg;
   }
 
   finishedEditing() {
