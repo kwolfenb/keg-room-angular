@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HappyHourPipe } from './filter.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { EditKegComponent } from './edit-keg/edit-keg.component';
     AppComponent,
     KegListComponent,
     NewKegComponent,
-    EditKegComponent
+    EditKegComponent,
+    HappyHourPipe
   ],
   imports: [
     BrowserModule,

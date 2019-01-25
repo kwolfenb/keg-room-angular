@@ -1,16 +1,24 @@
-<table>
+<table width="100%">
   <tr>
     <th>Name</th>
     <th>Brewery</th>
-    <th>Price</th>
+    <th>Price/Pint</th>
     <th>ABV %</th>
     <th>Edit</th>
+    <th>Sale</th>
+    <th>Keg Level</th>
   </tr>
   <tr [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList">
     <td>{{currentKeg.name}}</td>
     <td>{{currentKeg.brand}}</td>
-    <td>{{currentKeg.price}}</td>
-    <td>{{currentKeg.alcoholContent}}</td>
-    <td><button class="btn-btn success" (click)="editKeg(currentKeg)">Edit</button></td>
+    <td>{{currentKeg.price | happyHour: [childSale] | currency}}</td>
+    <td>{{currentKeg.alcoholContent + '%'}}</td>
+    <td><button (click)="editKeg(currentKeg)">Edit</button></td>
+    <td><button (click)="sellPint(currentKeg)">Pint</button><button (click)="sellGrowler(currentKeg)">Growler</button></td>
+    <td>{{currentKeg.pints}}</td>
+
   </tr>
 </table>
+<hr>
+<button (click)="happyHourButton()">Happy Hour!</button>
+<hr>

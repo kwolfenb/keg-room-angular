@@ -1,0 +1,11 @@
+th, td {
+  border: solid black 1px;
+}
+
+table {
+  margin-top: 4%;
+  table-layout: auto;
+  width: 75%;
+}
+
+

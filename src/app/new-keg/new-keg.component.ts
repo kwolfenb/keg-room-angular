@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Keg } from '../models/keg.model';
 
 
@@ -11,11 +10,12 @@ import { Keg } from '../models/keg.model';
 export class NewKegComponent {
 
   @Input() showNewKeg;
+  @Input() childHappyHour;
   @Output() sendNewKeg = new EventEmitter();
   @Output() showKeg = new EventEmitter();
 
   submitForm(name: string, brand: string, price: number, alcoholContent: number) {
-    let newKeg: Keg = new Keg(name, brand, price, alcoholContent);
+    let newKeg: Keg = new Keg(name, brand, price, alcoholContent, 124);
     this.sendNewKeg.emit(newKeg);
   }
 

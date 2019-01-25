@@ -1,6 +1,6 @@
 <div class="container">
-    <app-keg-list [childKegList]="kegList" (clickSender)="editKeg($event)"></app-keg-list>
+    <app-keg-list [childKegList]="kegList" [childSale]="salePercentage" (clickSender)="editKeg($event)" (happyHourSale)="happyHourSale()" (clickSellGrowler)="sellGrowler($event)" (clickSellPint)="sellPint($event)"></app-keg-list>
     <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
-    <app-new-keg (sendNewKeg)="addKeg($event)"(showKeg)="showNew()" [showNewKeg]="showNewKeg"></app-new-keg>
+    <app-new-keg (sendNewKeg)="addKeg($event)"(showKeg)="showNew()" [showNewKeg]="showNewKeg" [childHappyHour]="happyHour"></app-new-keg>
 </div>
 

@@ -9,10 +9,25 @@ import { Keg } from '../models/keg.model';
 export class KegListComponent {
 
   @Input() childKegList: Keg[];
+  @Input() childSale;
   @Output() clickSender = new EventEmitter();
+  @Output() clickSellPint = new EventEmitter();
+  @Output() clickSellGrowler = new EventEmitter();
+  @Output() happyHourSale = new EventEmitter();
+
+  happyHourButton() {
+    this.happyHourSale.emit();
+  }
 
   editKeg(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
+  }
+
+  sellPint(kegToSell: Keg) {
+    this.clickSellPint.emit(kegToSell);
+  }
+  sellGrowler(kegToSell: Keg) {
+    this.clickSellGrowler.emit(kegToSell);
   }
 
   priceColor(currentKeg) {
